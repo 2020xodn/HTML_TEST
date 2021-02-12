@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkmzGXvgDD8AY2lT95f2ny4h_TWp5Fo3By9Q&usqp=CAU/">
+    <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzOmwM7KguKgocNK816fwg-QKNqebaBlm_Rw&usqp=CAU">
+    <title>2021-02-12</title>
+    <!-- <script type ="text/javascript" scr="https://new-year.spartacodingclub.kr/newyear.js"><</script> -->
+
+    <style>
+        body {
+            background-color: ivory;
+        }
+
+        * {
+            font-family: 'Noto Sans KR', cursive;
+        }
+
+        .rtan {
+            display: block;
+            background-color: white;
+            width: 300px;
+            height: 300px;
+            border: solid 3px darkred;
+            border-radius: 300px;
+            box-shadow: 0px 0px 10px 0px darkred;
+            margin: 80px auto 50px auto;
+            background-size: cover;
+            background-position: center;
+            color: rgba(0, 0, 0, 50);
+            font-size: 30px;
+            text-decoration: none;
+            text-align: center;
+            background-image: url('https://w.namu.la/s/864e7345b3e9e96beed8596aa91350683b563893449be95839612d74ed5e6b5c79926a3dd2a370dce48634e53d689b055eaeaf407b722b7f28b5d6ae831b15a2a76443e201a0a10a94da6d122ef885f8cc2322b3c85e789db094665c974b693a');
+        }
+
+        .title {
+            color: black;
+            text-align: center;
+            font-size: 32px;
+        }
+
+        .msg {
+            color: darkred;
+            /* text-align: center; */
+            font-size: 32px;
+            line-height: 48px;
+            margin-left: 30px;
+            display: none;
+        }
+
+        .namu {
+            text-align: center;
+        }
+
+        .btns {
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+        }
+
+        .btn-back {
+            width: 150px;
+            height: 50px;
+
+            color: darkred;
+            border: 2px solid darkred;
+            background-color: white;
+
+            border-radius: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .btn-share {
+            width: 150px;
+            height: 50px;
+
+            color: white;
+            border: 2px solid darkred;
+            background-color: darkred;
+
+            border-radius: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        @media screen and (max-width: 780px) {
+
+            .rtan {
+                margin-top: 50px;
+            }
+
+            .msg {
+                font-size: 24px;
+                line-height: 36px;
+                margin-bottom: 36px;
+                padding: 10px;
+            }
+
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+                let digimons = ['아구몬', '파피몬', '피요몬', '팔몬', '텐타몬', '쉬라몬', '파닥몬', '가트몬'];
+                let digimon = getParameter('digimon') == '' ? '1' : getParameter('digimon');
+                let id = `rtan${digimon}`;
+                let beforeDigimon = digimons[digimon - 1];
+                
+                var digimonURL;
+                var evolutionName;
+                switch(digimon){
+                    case '1':
+                        digimonURL = 'https://w.namu.la/s/864e7345b3e9e96beed8596aa91350683b563893449be95839612d74ed5e6b5c79926a3dd2a370dce48634e53d689b055eaeaf407b722b7f28b5d6ae831b15a2a76443e201a0a10a94da6d122ef885f8cc2322b3c85e789db094665c974b693a';
+                        evolutionName = '워그레이몬'
+                        break;
+                    case '2':
+                        digimonURL = 'https://w.namu.la/s/56d728e573d96a31687c8aa1a458f7345e19d93439eec8c4914163cbb29884f9619248b5188d1c83b832d6282954efd562c3773d4e5e6d17c0bfcf3d8467f11fb8d9693cf7b52860758321d56aa7efae72496f9a03f0981b7964f660fab39b3a';
+                        evolutionName = '메탈가루몬'
+                        break;
+
+                    case '3':
+                        digimonURL = 'https://ww.namu.la/s/656ae9b9cf48c01ac46ac3af3666a42fc6e60eedd511018336a3722696abe3b85eb0c22ec28a1792a54d78a0b9f9faada93cf401ab8e47af531a6c9bfc65484292e9b3049ed22b07bc4af522d7e3d0c35a2516312db416076ec57e4d3127fbbf';
+                        evolutionName = '호우오우몬'
+                        break;
+
+                    case '4':
+                        digimonURL = 'https://w.namu.la/s/de67284bce5af71b2cbf7a2be570c7319766d375d857e08f43eea2b2f3d59d6034c09a533142709eaffca0bc1db3657c95be3101c80536a8944a3df297d196174f8ed549cfaa7d837f70114d9f2cf4683937c9e125c7d14fbb6b3c3c25573f6d';
+                        evolutionName = '로제몬'
+                        break;
+
+                    case '5':
+                        digimonURL = 'https://w.namu.la/s/e1e5b7d8a9eb249b0da281485a1ede801ffe59a3d4b61c4ef02ad6bd5244d022638582f2f7da7e2a1269f198867dbad1d6e834f1e3200b43f3d9dd5cf83c2769657a6a59df3b12514821bc1ac26aa38b48c1220821796eb80c9c6f3341787c4c';
+                        evolutionName = '헤라클레스캅테리몬'
+                        break;
+
+                    case '6':
+                        digimonURL = 'https://w.namu.la/s/71d6573ae3d76d9f1a69f5544a93d0f6bbf4b9325bd0c873712481a9687153347fdf11d6b8ec9b0eeae816408919e33bf627a476f91c2c704bcd80e8971605d45a9ec33a31c0d05cce136d3b364be76256319c7afe5401f3677af55de65e1cf6';
+                        evolutionName = '바이킹몬'
+                        break;
+
+                    case '7':
+                        digimonURL = 'https://ww.namu.la/s/484cbbb158ec833a1da7e32ef9ad711cd7d9b483057aa7eba469c40d7f77b798a81eac75288d74b22ae5d7da10ffb689ef2b75ff92be1e5463e1af9dd3e56d5e065f24275396a02389847247eaa5920e65b9832d2b0add1ed918ed4ecf8ad425';
+                        evolutionName = '세라피몬'
+                        break;
+
+                    case '8':
+                        digimonURL = 'https://w.namu.la/s/4e8c33fae3feb2fc1094ac11f8e44c6667697e53be29309fa0128fb05f50fbee2107c09e974b372065c2f8a0098a746ecda3fa7eca6d94cafe75989c80986ad9a486311f74b49dccb77a021075b4221de8ad8f166b86784ffa8e6a6e13193c61';
+                        evolutionName = '오파니몬'
+                        break;
+                }
+                document.getElementById(id).style.display = 'block';
+                document.getElementsByClassName('rtan')[0].innerHTML = evolutionName;
+                document.getElementsByClassName('rtan')[0].style.backgroundImage = `url(${digimonURL})`;
+                document.getElementsByTagName('h1')[0].innerHTML = `${beforeDigimon}이 진화하면!?`;
+        });
+
+        function getParameter(name) {
+            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+            results = regex.exec(location.search);
+            return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
+
+        function back() {
+            let url = window.location.href;
+            let new_url = url.split('result.html')[0] + 'index.html';
+            window.location.href = new_url;
+        }
+
+        function share() {
+            var t = document.createElement("textarea");
+            document.body.appendChild(t);
+            t.value = window.location.href;
+            t.select();
+            document.execCommand('copy');
+            document.body.removeChild(t);
+            alert('복사 완료!')
+        }
+    </script>
+</head>
+
+<body>
+    <div class="rtan"></div>
+    <h1 class="title">그거슨 워그레이몬이었구요</h1>
+    
+
+    <p class="msg" id="rtan1" aria-label="워그레이몬">
+        세대 : 궁극체<br />
+        타입 : 용인형<br />
+        속성 : 백신<br />
+        필살기 : 가이아 포스, 브레이브 토네이도, 드라몬 킬러<br />
+    </p>
+    <p class="msg" id="rtan2" aria-label="메탈가루몬">
+        세대: 궁극체<br />
+        타입: 사이보그형<br />
+        속성: 데이터<br />
+        필살기 : 코퀴토스 브레스, 그레이스 크로스 프리저, 가루루 토마호크
+    </p>
+    <p class="msg" id="rtan3" aria-label="호우오우몬">
+        세대: 궁극체<br />
+        종족: 성수형<br />
+        속성: 백신종<br />
+        필살기 : 스타라이트 익스플로전, 크림슨 플레어
+    </p>
+    <p class="msg" id="rtan4" aria-label="로제몬">
+        세대 : 궁극체<br />
+        타입 : 요정형<br />
+        속성 : 데이터<br />
+        필살기 : 손 위프, 로제스 레이피어, 포비든 템프테이션
+    </p>
+    <p class="msg" id="rtan5" aria-label="헤라클레스">
+        세대 : 궁극체<br />
+        타입 : 곤충형<br />
+        속성 : 백신<br />
+        필살기 : 기가 블래스터, 하이 메가 블래스터, 혼 버스터 改, 거대 가위
+    </p>
+    <p class="msg" id="rtan6" aria-label="바이킹몬">
+        세대 : 궁극체<br />
+        종족 : 수인형<br />
+        속성 : 프리, 백신, 데이터<br />
+        필살기 :아크틱 블리자드, 바이킹 액스
+    </p>
+    <p class="msg" id="rtan7" aria-label="세라피몬">
+        세대 : 궁극체<br />
+        타입 : 치천사형<br />
+        속성 : 백신<br />
+        필살기 : 세븐 헤븐즈, 어센션 할로우, 엑스칼리버
+    </p>
+    <p class="msg" id="rtan8" aria-label="오파니몬">
+        세대 : 궁극체<br />
+        타입 : 좌천사형<br />
+        속성 : 백신<br />
+        필살기 : 세피로트 크리스탈, 에덴즈 자벨린
+    </p>
+    <p class="namu">
+        From 나무위키
+    </p>
+
+    <div class="btns">
+        <button onclick="back();" class="btn-back">
+            뒤로가기
+        </button>
+
+        <button onclick = "share();" class="btn-share">
+            공유하기
+        </button>
+    </div>
+
+</body>
+
+</html>

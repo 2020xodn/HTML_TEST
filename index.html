@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="2021-02-12"/>
+    <meta property="og:description" content="스파르타 코딩 보고 만든 html"/>
+    <meta property="og:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkmzGXvgDD8AY2lT95f2ny4h_TWp5Fo3By9Q&usqp=CAU/">
+    <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzOmwM7KguKgocNK816fwg-QKNqebaBlm_Rw&usqp=CAU">
+    <title>2021-02-10</title>
+    <style>
+        .mytitle {
+            color: darkred;
+            text-align: center;
+            margin-top: 100px;
+            margin-bottom: 50px;
+        }
+
+        .mytitle>h1 {
+            font-size: 56px;
+            /* margin-bottom: 0; */
+        }
+
+        body {
+            background-color: ivory;
+            background-image: url('https://t1.kakaocdn.net/friends/prod/brand/202101_type1_thumb_pc.jpg');
+            background-position: 50px 100px;
+            background-repeat: no-repeat;
+        }
+
+        * {
+            font-family: 'Noto Sans KR', cursive; 
+        }
+
+        
+        .rtans>a {
+            display: block;
+            background-color: white;
+            width: 150px;
+            height: 150px;
+            border: solid 3px darkred;
+            border-radius: 150px;
+            box-shadow: 0px 0px 10px 0px darkred;
+            margin: 10px;
+            background-size: cover;
+            background-position: center;
+             /* color: white; 흰색 */
+            color: rgba(0, 0, 0, 0);
+            font-size: 30px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .rtan1 {
+            background-image: url('https://w.namu.la/s/27780ffadf2cf3ae42d64d54abb6edf66cace8b20de1b823c8c9651761c323280ee7cce9e4e3f90d09e4776bb4ecfecf1948ea228c6ec5b407773e850d966c8789acb733436317fd55d6780c33a0dd93acd44341224667123c5de05358a1bd71');
+        }
+
+        .rtan2 {
+            background-image: url('https://w.namu.la/s/49fa2fc612a029f7f3431362f5d58f61bf70456676ce9943d675f019c1b094bad1d3f569e31b235bc5b61730b028ad84a8d0aec131955473b867b815ec33e2b0b521d3125406c1f1b354e4a61561feb8e05be4c1b89544996aa87c26cfbddf41');
+        }
+
+        .rtan3 {
+            background-image: url('https://ww.namu.la/s/519e133cb8f0b398258f8cded395e222683c22cdbd1bace41dca8ea6adc2febd18a911f0e1a386f307808722abfbc264d012d1bb30cae30382eb9502ab5a6e4583863a9c0e68978a23cca9089871c5b4f65424203ba6306edf883bbd3bbc2fee');
+        }
+
+        .rtan4 {
+            background-image: url('https://ww.namu.la/s/0a762335d0b7216c599f36d3e53b9a2844b7a837afe1db77bdaf0f201846317cfb4f1cf3dfb05db2931bd338990c399a95f3f73cbeaf782bb85a8b5d6593dd16b62c62a9739740a0d3f141653f9d5d8a0a255f7ba907f26da517b6ee7176dcf8');
+        }
+
+        .rtan5 {
+            background-image: url('https://ww.namu.la/s/96f70e420e9839dfd5bfc562ffc07b82baa244bfa8c4bf025e8be0783d67eae8676812cac5edcdd6d1fe5290e00aebd25354099b3f9ec2daff4229ff88ee8ecf11da8ee6d1f92808d7f0ba1dc3de3974bfe761db495b64a50a94b1dbbaaec2f3');
+        }
+
+        .rtan6 {
+            background-image: url('https://ww.namu.la/s/45f354c54f517dd863e16dbb2e324a800c33c666a52e2b7096e6d17568447a1b907a3ddc6d22e2a4a435787cd2348c3cd8b2e8df875ef577c7d9780679450bce895e5d95533ab5292a0c39b5582d4da0392674393857293bb424ca540be1902f');
+        }
+
+        .rtan7 {
+            background-image: url('https://w.namu.la/s/e519eb9c872106d1d775f4d773877fd34629fd6e7c277a895f70cdc0de8eab30b3f5202577c42c2b6fcd7a48af7271b33cc94d1bbfc2e5d405167fa679891c5dc64a966fe5d8c64295917b95f316495b97ee4ae29cad8f982cce25ea27db70f0');
+        }
+
+        .rtan8 {
+            background-image: url('https://ww.namu.la/s/563808653b0c40595a46398338852050a0f3538e3d78ef3bbc0ad613909ec88f197ada443360b8313216fa919bff71d417813b3ab788818dd3fdddae1d0f6bf2b2d80c4e24e739aba320fb03d043df7ad1f60821c1a96e2a28ddc5b8fa3f4c19');
+        }
+
+        .rtans {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 800px;
+            margin: auto;
+        }
+        
+        .rtans> a:hover{
+            color: black;
+        }
+        
+        @media screen and (max-width: 780px){
+            body{
+                /* background-color: yellowgreen; */
+                background-position: 70px - 70px;
+                background-image: none;
+                background-size: 500px;
+                background-color: ivory;
+            }
+            
+            .rtans{
+                width: 380px;
+            }
+            
+            .mytitle{
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+            .rtans>a{
+                color: black;
+                font-size: 20px;
+                text-decoration: none;
+                text-align: center;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="mytitle">
+        <h1>디지몬</h1>
+        <h2>진화하면 어떻게 될까요?</h2>
+    </div>
+
+    <div class="rtans">
+        <a class="rtan1" href='result.html?digimon=1'>아구몬</a>
+        <a class="rtan2" href='result.html?digimon=2'>파피몬</a>
+        <a class="rtan3" href='result.html?digimon=3'>피요몬</a>
+        <a class="rtan4" href='result.html?digimon=4'>팔몬</a>
+
+        <a class="rtan5" href='result.html?digimon=5'>텐타몬</a>
+        <a class="rtan6" href='result.html?digimon=6'>쉬라몬</a>
+        <a class="rtan7" href='result.html?digimon=7'>파닥몬</a>
+        <a class="rtan8" href='result.html?digimon=8'>가트몬</a>
+    </div>
+</body>
+
+</html>
